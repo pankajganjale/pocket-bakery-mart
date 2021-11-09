@@ -1,0 +1,42 @@
+.navbar {
+    height: 64px;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 130px;
+    padding-right: 130px;
+}
+
+.navbar > div {
+    display: flex;
+    align-items: center;
+}
+
+.navbar > div:nth-child(1) > img:nth-child(2) {
+    margin-left: 18px;
+    margin-right: 18px;
+}
+
+.navbar > div:nth-child(2) > button:nth-child(2) {
+    margin-left: 67px;
+    margin-right: 67px;
+}
+
+img {
+    width: 24px;
+    height: 24px;
+}
+
+button {
+    font-size: 24px;
+    font-weight: 300;
+    padding: 4px, 10px, 4px, 10px;
+    border-radius: 5px;
+    background-color: #FFE24D;
+    border: none;
+    height: 36px;
+}
+
+.navbar > div:nth-child(1) > button {
+    width: 144px;
+    height: 36px;
+}
