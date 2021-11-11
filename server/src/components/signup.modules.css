@@ -1,0 +1,47 @@
+.modalDiv {
+  border-radius: 5px;
+}
+.threeType1 {
+  position: absolute;
+  width: 309px;
+  height: 50px;
+  top: 294px;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 20px;
+}
+.threeType2 {
+  position: absolute;
+  width: 309px;
+  height: 50px;
+  top: 294px;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  margin-top: 60px;
+  border-radius: 20px;
+}
+.threeType3 {
+  position: absolute;
+  width: 309px;
+  height: 50px;
+  top: 294px;
+  margin-top: 120px;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 20px;
+}
+.container {
+  margin-top: -60%;
+  display: flex;
+  margin-right: 20%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.modalDiv2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
