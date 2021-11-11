@@ -1,0 +1,60 @@
+.filterModal {
+    width: 369px;
+    border-radius: 20px;
+    background-color: white;
+    border: 1px solid black;
+}
+
+.filterModal > div:nth-child(1) {
+    text-align: right;
+    margin: 10px 20px;
+    font-size: 22px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.filterModal > div:nth-child(2) {
+    width: 80%;
+    margin: auto;
+}
+
+.filterModal > div:nth-child(3) {
+    background-color: rgba(255, 226, 77, 1);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.buttonsStyle > div {
+    text-align: left;
+}
+
+.buttonsStyle > div:nth-child(1) {
+    margin-left: 10px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.buttonsStyle > div:nth-child(2), .buttonsStyle > div:nth-child(4), .buttonsStyle > div:nth-child(6) {
+    margin: 10px;
+    font-size: 12px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.buttonsStyle > div > button {
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 23px;
+    padding: 10px;
+    margin: 10px;
+    background-color: transparent !important;
+    border: 1px solid black;
+}
+
+.buttonsStyle > div > button:hover {
+    background-color: rgba(255, 226, 77, 1) !important;
+}
