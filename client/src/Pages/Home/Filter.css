@@ -1,0 +1,42 @@
+.filter {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 78%;
+    margin: auto;
+    margin-top: 5px;
+    text-align: center;
+}
+.filter > button {
+    margin-left: 10px;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    font-size: 18px;
+}
+
+.filter > button {
+    background-color: transparent !important;
+    border: 1px solid black !important;
+    border-radius: 5px !important;
+    margin-left: 20px;
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: 700;
+}
+
+.filter > button:nth-child(1) {
+    border: none !important;
+}
+
+.filter > button > img {
+    margin: 10px;
+}
+
+.filter > button:nth-child(1) > img, .filter > button:nth-child(4) > img {
+    width: 24px;
+    height: 24px;
+}
+
+.filter > button:nth-child(2) > img {
+    width: 14px;
+    height: 14px;
+}

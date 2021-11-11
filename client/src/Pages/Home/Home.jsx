@@ -8,6 +8,7 @@ import { RequestCake } from "../Utils/Request";
 import { useEffect, useState } from "react";
 import Item from "./Item";
 import IconSlider from "./IconSlider";
+import Filter from "./Filter";
 
 const Home = () => {
 
@@ -64,6 +65,7 @@ const Home = () => {
         <div>
             <Navbar></Navbar>
             <Search></Search>
+            <Filter></Filter>
             <div style={styles}>
                 <Heading heading1="Order What Makes You Happy"></Heading>
                 <IconSlider></IconSlider>
