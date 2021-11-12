@@ -1,13 +1,26 @@
 import React, { useState } from "react";
 import "./signup.modules.css";
 import Modal from "react-modal";
-function OtpSetModel({ setState }) {
+function OtpSetModel({ setState, otpSend, newMobile }) {
   let [otp, setOtp] = useState(new Array(6).fill(""));
+  let [x, setX] = useState([]);
+  //let otpRec = otpSend.split("");
+  console.log(otpSend, ":recvd otp");
   let handleChange = (ele, i) => {
+    //i = i + 1;
     if (isNaN(ele.value)) return false;
     setOtp([...otp.map((e, ind) => (ind === i ? ele.value : e))]);
+
     if (ele.nextSibling) {
       ele.nextSibling.focus();
+    }
+  };
+  console.log("otp", otp.join(""));
+  let handleLogin = () => {
+    if (otpSend === Number(otp.join(""))) {
+      setState(0);
+    } else {
+      alert("please enter a valid otp!");
     }
   };
   return (
@@ -73,7 +86,7 @@ function OtpSetModel({ setState }) {
           </div>
           <p style={{ fontSize: "small", fontFamily: "roboto" }}>
             We’ll senD an SMS with a 6-digit code to
-            <br /> +918970452155
+            <br /> {newMobile}
           </p>
           <button
             style={{
@@ -85,7 +98,7 @@ function OtpSetModel({ setState }) {
               borderRadius: "50px",
               fontSize: "bold",
             }}
-            onClick={(e) => setOtp([...otp.map((x) => "")])}
+            onClick={handleLogin}
           >
             Next
           </button>

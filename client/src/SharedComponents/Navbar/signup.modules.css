@@ -1,5 +1,8 @@
 .modalDiv {
-  border-radius: 5px;
+  border-radius: 10px;
+  height: 80vh;
+  width: 100%;
+  justify-content: center;
 }
 .threeType1 {
   position: absolute;
@@ -31,9 +34,9 @@
   border-radius: 20px;
 }
 .container {
-  margin-top: -60%;
+  margin-top: -80%;
   display: flex;
-  margin-right: 20%;
+  margin-right: 3%;
   flex-direction: column;
   align-items: center;
   justify-content: center;

@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import "./signup.modules.css";
 import Modal from "react-modal";
-function SignupWithPhone({ setState }) {
+function SignupWithPhone({ setState, setMobile, handleOtp }) {
+  //console.log("otp:", otp);
+  //console.log("newmob:", newMobile);
   return (
     <>
       <Modal
@@ -35,16 +37,18 @@ function SignupWithPhone({ setState }) {
         <div className="modalDiv2">
           <div
             style={{
-              width: "100%",
+              width: "110%",
               display: "flex",
               marginTop: "-20px",
               justifyContent: "space-between",
             }}
           >
-            <p onClick={() => setState(1)}>
+            <p style={{ marginLeft: "20px" }} onClick={() => setState(1)}>
               <img src="./arrow.png" />
             </p>
-            <p onClick={() => setState(0)}>X</p>
+            <p style={{ marginRight: "30px" }} onClick={() => setState(0)}>
+              X
+            </p>
           </div>
           <h3 style={{ color: "#5C5C5C", fontFamily: "Roboto" }}>
             Enter the phone number
@@ -81,6 +85,9 @@ function SignupWithPhone({ setState }) {
                   }}
                   placeholder="Phone Number"
                   type="number"
+                  onChange={(e) => {
+                    setMobile(e.target.value);
+                  }}
                 />
               </span>
             </p>
@@ -105,7 +112,7 @@ function SignupWithPhone({ setState }) {
               borderRadius: "50px",
               fontSize: "bold",
             }}
-            onClick={() => setState(3)}
+            onClick={() => handleOtp()}
           >
             Next
           </button>

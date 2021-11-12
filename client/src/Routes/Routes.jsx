@@ -1,11 +1,11 @@
 import Home from "../Pages/Home/Home";
 
-const Routes = () => {
-    return (
-        <div>
-            <Home></Home>
-        </div>
-    )
-}
+const Routes1 = () => {
+  return (
+    <div>
+      <Home></Home>
+    </div>
+  );
+};
 
-export default Routes;
+export default Routes1;
