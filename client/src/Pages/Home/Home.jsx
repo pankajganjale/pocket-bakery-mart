@@ -9,11 +9,16 @@ import IconSlider from "./IconSlider";
 import Filter from "./Filter";
 import FilterModal from "../Modals/FilterModal/FilterModal";
 import { provider, auth } from "./fireBase";
+
 const Home = () => {
   const [cakes, setCakes] = useState([]);
   const [item, setItem] = useState([]);
   const [shop, setShop] = useState([]);
   const [filtermodal, setFiltermodal] = useState("");
+  const [filter, setFilter] = useState(false);
+  const [getFilter, setgetFilter] = useState([]);
+
+
 
   useEffect(() => {
     getData();
@@ -25,6 +30,27 @@ const Home = () => {
     const { data } = await RequestCake.get("/cake");
     setCakes(data);
   };
+
+ const filterData = (list) => {
+  
+  setFilter(true);
+        const updated = cakes.filter((e) => {
+                if (e.trend == list || e.falvour == list) {
+                    return e;
+            };
+        });
+        console.log(updated)
+        setgetFilter(updated)
+  }
+  
+   const showVegList = (ele) => {
+        setFilter(true);
+        const updated = cakes.filter((e) => {
+            return e.veg == ele;
+        })
+        console.log(updated)
+        setgetFilter(updated);
+    }
 
   const getItem = async () => {
     const { data } = await RequestCake.get("/item");
@@ -60,18 +86,18 @@ const Home = () => {
     <div>
       <Navbar loggedIn={loggedin} signIn={signin} src={url} name={name} />
       <Search></Search>
-      <Filter setFiltermodal={setFiltermodal}></Filter>
+      <Filter setFiltermodal={setFiltermodal} showVeg={showVegList}></Filter>
 
       <div style={styles}>
         <Heading heading1="Order What Makes You Happy"></Heading>
         {filtermodal === 5 ? (
-          <FilterModal setFiltermodal={setFiltermodal} />
+          <FilterModal setFiltermodal={setFiltermodal} showFilter={filterData}/>
         ) : (
           ""
         )}
         <IconSlider></IconSlider>
         <Heading heading1="Recommended Cakes"></Heading>
-        <CarouselItem data={cakes}></CarouselItem>
+        <CarouselItem data={filter?getFilter:cakes}></CarouselItem>
         <Heading heading1="Inspiration For Your Next Order"></Heading>
         <CarouselItem data={item}></CarouselItem>
         <Heading heading1="Bakeries Near You"></Heading>
