@@ -29,7 +29,7 @@ const Item = ({ data }) => {
         <div className="carousel">
             <Carousel breakPoints={breakPoints}>
                 {data.map((e) => (
-                    <div key={e.id} style={{ ...styles, backgroundImage: `linear-gradient(rgb(255, 255, 255, 0), rgb(0, 0, 0, 0.4)), url(${e.image})`, backgroundSize: "cover", backgroundPosition: "center" }}>
+                    <div key={e._id} style={{ ...styles, backgroundImage: `linear-gradient(rgb(255, 255, 255, 0), rgb(0, 0, 0, 0.4)), url(${e.image})`, backgroundSize: "cover", backgroundPosition: "center" }}>
                         <div className="bottomDiv">
                             <div>{e.name}</div>
                             <div>{e.rating}★</div>

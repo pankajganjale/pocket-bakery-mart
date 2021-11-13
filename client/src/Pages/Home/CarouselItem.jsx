@@ -40,9 +40,9 @@ const CarouselItem = ({ data }) => {
     <div className="carousel">
       <Carousel breakPoints={breakPoints}>
         {data.map((e) => (
-          <div key={e.id} style={{ ...styles, backgroundImage: `linear-gradient(rgb(255, 255, 255, 0), rgb(0, 0, 0, 0.4)), url(${e.image})`, backgroundSize: "cover", backgroundPosition: "center"}}>
+          <div key={e._id} style={{ ...styles, backgroundImage: `linear-gradient(rgb(255, 255, 255, 0), rgb(0, 0, 0, 0.4)), url(${e.image})`, backgroundSize: "cover", backgroundPosition: "center"}}>
             <div style={{margin: "0px 10px 20px 20px", fontWeight: "500", fontSize: "18px"}}>{`${e.name} - ${e.rating}☆`}</div>
-            <div style={{margin: "0px 10px 0px 20px", fontWeight: "500", fontSize: "24px"}}>{e.seller}</div>
+            <div style={{margin: "0px 10px 0px 20px", fontWeight: "500", fontSize: "24px"}}>{e.seller.name}</div>
           </div>
         ))}
       </Carousel>

@@ -26,12 +26,14 @@ const Home = () => {
   }, []);
 
   const getData = async () => {
-    const { data } = await RequestCake.get("/cake");
-    setCakes(data);
+    const { data } = await RequestCake.get("/cakes");
+    console.log(data.data)
+    setCakes(data.data);
   };
 
   const filterData = (list) => {
     setFilter(true);
+    console.log(cakes)
     const updated = cakes.filter((e) => {
       if (e.trend == list || e.falvour == list) {
         return e;
@@ -51,13 +53,13 @@ const Home = () => {
   };
 
   const getItem = async () => {
-    const { data } = await RequestCake.get("/item");
-    setItem(data);
+    const { data } = await RequestCake.get("/snacks");
+    setItem(data.data);
   };
 
   const getShop = async () => {
-    const { data } = await RequestCake.get("/shop");
-    setShop(data);
+    const { data } = await RequestCake.get("/shops");
+    setShop(data.data);
   };
 
   const styles = {
