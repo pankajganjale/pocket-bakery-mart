@@ -9,11 +9,8 @@ import IconSlider from "./IconSlider";
 import Filter from "./Filter";
 import FilterModal from "../Modals/FilterModal/FilterModal";
 import { provider, auth } from "./fireBase";
-<<<<<<< HEAD
 import { Route, Switch, Link } from "react-router-dom";
-=======
 
->>>>>>> 64da84c0a407353c645fbf8b2cb4a69dfb6e6ff1
 const Home = () => {
   const [cakes, setCakes] = useState([]);
   const [item, setItem] = useState([]);
@@ -21,8 +18,6 @@ const Home = () => {
   const [filtermodal, setFiltermodal] = useState("");
   const [filter, setFilter] = useState(false);
   const [getFilter, setgetFilter] = useState([]);
-
-
 
   useEffect(() => {
     getData();
@@ -35,26 +30,25 @@ const Home = () => {
     setCakes(data);
   };
 
- const filterData = (list) => {
-  
-  setFilter(true);
-        const updated = cakes.filter((e) => {
-                if (e.trend == list || e.falvour == list) {
-                    return e;
-            };
-        });
-        console.log(updated)
-        setgetFilter(updated)
-  }
-  
-   const showVegList = (ele) => {
-        setFilter(true);
-        const updated = cakes.filter((e) => {
-            return e.veg == ele;
-        })
-        console.log(updated)
-        setgetFilter(updated);
-    }
+  const filterData = (list) => {
+    setFilter(true);
+    const updated = cakes.filter((e) => {
+      if (e.trend == list || e.falvour == list) {
+        return e;
+      }
+    });
+    console.log(updated);
+    setgetFilter(updated);
+  };
+
+  const showVegList = (ele) => {
+    setFilter(true);
+    const updated = cakes.filter((e) => {
+      return e.veg == ele;
+    });
+    console.log(updated);
+    setgetFilter(updated);
+  };
 
   const getItem = async () => {
     const { data } = await RequestCake.get("/item");
@@ -91,23 +85,23 @@ const Home = () => {
       <Navbar loggedIn={loggedin} signIn={signin} src={url} name={name} />
 
       <Search></Search>
-<<<<<<< HEAD
 
-      <Filter setFiltermodal={setFiltermodal}></Filter>
-=======
+      {/* //<Filter setFiltermodal={setFiltermodal}></Filter> */}
       <Filter setFiltermodal={setFiltermodal} showVeg={showVegList}></Filter>
->>>>>>> 64da84c0a407353c645fbf8b2cb4a69dfb6e6ff1
 
       <div style={styles}>
         <Heading heading1="Order What Makes You Happy"></Heading>
         {filtermodal === 5 ? (
-          <FilterModal setFiltermodal={setFiltermodal} showFilter={filterData}/>
+          <FilterModal
+            setFiltermodal={setFiltermodal}
+            showFilter={filterData}
+          />
         ) : (
           ""
         )}
         <IconSlider></IconSlider>
         <Heading heading1="Recommended Cakes"></Heading>
-        <CarouselItem data={filter?getFilter:cakes}></CarouselItem>
+        <CarouselItem data={filter ? getFilter : cakes}></CarouselItem>
         <Heading heading1="Inspiration For Your Next Order"></Heading>
         <CarouselItem data={item}></CarouselItem>
         <Heading heading1="Bakeries Near You"></Heading>
