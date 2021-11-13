@@ -83,14 +83,11 @@ const Navbar = ({ loggedIn, signIn, src, name }) => {
             <button onClick={() => setState(1)}>Sign up</button>
           </div>
 
-          <Route path="/signup">
-            {" "}
-            {state === 1 ? (
-              <SignupModal signIn={signIn} setState={setState} />
-            ) : (
-              ""
-            )}
-          </Route>
+          {state === 1 ? (
+            <SignupModal signIn={signIn} setState={setState} />
+          ) : (
+            ""
+          )}
 
           {state === 2 ? (
             <SignupWithPhone
