@@ -39,7 +39,7 @@ function FilterModal({ setFiltermodal,showFilter }) {
             borderRadius: "20px",
             outline: "none",
             overflow: "hidden ",
-            marginTop: "-21px",
+            // marginTop: "-21px",
           },
         }}
       >
@@ -68,7 +68,7 @@ function FilterModal({ setFiltermodal,showFilter }) {
               <button>Puff</button>
             </div>
           </div>
-          <div onClick={() => setFiltermodal(0)} style={{ textAlign:"center",width: "369px", marginTop: "15px",marginLeft:"-20px"}}>APPLY</div>
+          <div onClick={() => setFiltermodal(0)} >APPLY</div>
         </div>
       </Modal>
     </>
