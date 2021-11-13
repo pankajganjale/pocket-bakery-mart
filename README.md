@@ -40,6 +40,8 @@ Inside Pocket-Bakery-Mart install with npm:
 ![Cloned landing page](https://github.com/pankajganjale/pocket-bakery-mart/blob/master/client/screenshots/landing_page_1.png) 
 ![Cloned landing page](https://github.com/pankajganjale/pocket-bakery-mart/blob/master/client/screenshots/landing_page_2.png) 
 ![Cloned landing page](https://github.com/pankajganjale/pocket-bakery-mart/blob/master/client/screenshots/landing_page_3.png) 
+## Product Filter
+![Cloned landing page](https://github.com/pankajganjale/pocket-bakery-mart/blob/master/client/screenshots/filter_box_1.png) 
   
   ## Tech Stack
 
