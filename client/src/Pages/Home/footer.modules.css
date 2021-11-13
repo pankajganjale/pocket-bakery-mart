@@ -1,0 +1,21 @@
+#footer {
+  width: 100%;
+  height: 350px;
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  color: aliceblue;
+  font-family: Roboto;
+}
+#subFooter1 {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 100px;
+  margin-top: 30px;
+}
+#subFooter2 {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 100px;
+  margin-top: 30px;
+}

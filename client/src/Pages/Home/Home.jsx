@@ -9,6 +9,7 @@ import IconSlider from "./IconSlider";
 import Filter from "./Filter";
 import FilterModal from "../Modals/FilterModal/FilterModal";
 import { provider, auth } from "./fireBase";
+import Footer from "./Footer";
 import { Route, Switch, Link } from "react-router-dom";
 
 const Home = () => {
@@ -106,6 +107,7 @@ const Home = () => {
         <CarouselItem data={item}></CarouselItem>
         <Heading heading1="Bakeries Near You"></Heading>
         <Item data={shop}></Item>
+        <Footer></Footer>
       </div>
 
       {/* {filtermodal && <FilterModal showModal={setFiltermodal}></FilterModal>} */}
