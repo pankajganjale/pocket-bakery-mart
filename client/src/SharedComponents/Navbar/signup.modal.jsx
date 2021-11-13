@@ -1,6 +1,7 @@
 import React from "react";
 import "./signup.modules.css";
 import Modal from "react-modal";
+import { withRouter } from "react-router-dom";
 function SignupModal({ signIn, setState }) {
   console.log(signIn);
   return (
@@ -93,4 +94,4 @@ function SignupModal({ signIn, setState }) {
     </>
   );
 }
-export default SignupModal;
+export default withRouter(SignupModal);

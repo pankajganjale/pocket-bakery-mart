@@ -70,10 +70,17 @@ function OtpSetModel({ setState, otpSend, newMobile }) {
           <h3 style={{ color: "#5C5C5C", fontFamily: "Roboto" }}>
             Enter your code
           </h3>
-          <div>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              width: "200px",
+            }}
+          >
             {otp.map((el, index) => {
               return (
                 <input
+                  style={{ width: "10px", height: "25px", outline: "none" }}
                   key={index}
                   maxLength="1"
                   name="otp"
@@ -115,7 +122,10 @@ function OtpSetModel({ setState, otpSend, newMobile }) {
             />
             Resend SMS
           </p>
-          <p style={{ fontSize: "small", fontFamily: "roboto" }}>
+          <p
+            style={{ fontSize: "small", fontFamily: "roboto" }}
+            onClick={() => setState(2)}
+          >
             <img
               style={{ height: "15px", marginRight: "10px" }}
               src="./pen.png"

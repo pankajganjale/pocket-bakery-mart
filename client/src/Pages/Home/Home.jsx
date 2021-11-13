@@ -9,6 +9,7 @@ import IconSlider from "./IconSlider";
 import Filter from "./Filter";
 import FilterModal from "../Modals/FilterModal/FilterModal";
 import { provider, auth } from "./fireBase";
+import { Route, Switch, Link } from "react-router-dom";
 const Home = () => {
   const [cakes, setCakes] = useState([]);
   const [item, setItem] = useState([]);
@@ -59,7 +60,9 @@ const Home = () => {
   return (
     <div>
       <Navbar loggedIn={loggedin} signIn={signin} src={url} name={name} />
+
       <Search></Search>
+
       <Filter setFiltermodal={setFiltermodal}></Filter>
 
       <div style={styles}>
@@ -77,6 +80,7 @@ const Home = () => {
         <Heading heading1="Bakeries Near You"></Heading>
         <Item data={shop}></Item>
       </div>
+
       {/* {filtermodal && <FilterModal showModal={setFiltermodal}></FilterModal>} */}
     </div>
   );
