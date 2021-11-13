@@ -35,6 +35,11 @@ Inside Pocket-Bakery-Mart install with npm:
 ````
   npm install
 ````  
+
+## Links Related to Blog 
+[Blog Link Here](https://medium.com/@gadalkabi/pocket-bakery-mart-ec5dd3810a57)
+
+
   ## Screenshots
 ## landing page
 ![Cloned landing page](https://github.com/pankajganjale/pocket-bakery-mart/blob/master/client/screenshots/landing_page_1.png) 
