@@ -6,7 +6,7 @@
       "name": "Round Chocolate Truffle Cake",
       "seller": "The Bakers",
       "description": "The heavenly taste of this Choco Truffle Cake will even leave the hardest-to-please chocolate addicts tranquil in every sense. Prepared with three layers of relishing chocolate cream filled in between the soft stacks of chocolate cake, and adorned with beautiful chocolate icing and rich glaze chocolate coating, this one is just irresistible.",
-      "veg": true,
+      "veg": false,
       "rating": 5,
       "shopRating": 5,
       "trend": "Best Seller",
@@ -22,7 +22,7 @@
       "name": "Delicious Butterscotch Cake",
       "seller": "Cake Street",
       "description": "Butterscotch cake is always considered a delicious dessert for any occasion, no matter how small or large. The buttery goodness of this delicious cake is sure to make your mouth water. All you need is a special occasion to enjoy it! This is the perfect treat for anyone who loves butterscotch.",
-      "veg": true,
+      "veg": false,
       "rating": 5,
       "shopRating": 4,
       "trend": "Best Seller",
@@ -54,7 +54,7 @@
       "name": "Tangerine Infused Round Glaze Cake",
       "seller": "R&B Bakery",
       "description": "The love for tangy tangerine need not end! Taste the scrumptious flavour of divine orange infused with the gentle aroma of vanilla and treat your taste buds to this round orange glazed cake. Perfect for celebratory occasions all year round, grab this delight for your loved ones right away!",
-      "veg": true,
+      "veg": false,
       "rating": 4.5,
       "shopRating": 4.5,
       "trend": "Healthy",
@@ -206,7 +206,7 @@
       "small": 775,
       "medium": 1449,
       "large": 2199,
-      "falvour": "Chocolate"
+      "falvour": "Red Velvet"
     },
     {
       "id": 14,
@@ -238,7 +238,7 @@
       "small": 599,
       "medium": 949,
       "large": 1449,
-      "falvour": "Mix Fruit"
+      "falvour": "Red Velvet"
     },
     {
       "id": 16,
