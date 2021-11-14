@@ -1,32 +1,116 @@
-.carousel {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
-} 
-
-button.rec-dot {
-    display: none;
+* {
+	font-family: "Roboto", sans-serif;
 }
 
-.rec.rec-arrow:hover, .rec.rec-arrow:active, .rec.rec-arrow:focus,  .rec.rec-arrow {
-  color: black !important;
-  background-color: transparent !important;
-  border-color: transparent !important;
-  border-style: none !important;
+.carousel {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 20px;
+}
+
+button.rec-dot {
+	display: none;
+}
+
+.rec.rec-arrow:hover,
+.rec.rec-arrow:active,
+.rec.rec-arrow:focus,
+.rec.rec-arrow {
+	color: black !important;
+	background-color: transparent !important;
+	border-color: transparent !important;
+	border-style: none !important;
 }
 
 .bottomDiv {
-  background-color: white;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  border-bottom: 1px solid gray;
-  display: flex;
-  justify-content: space-between;
-  font-size: 24px;
-  font-weight: 500;
+	background-color: white;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+	border-bottom: 1px solid gray;
+	display: flex;
+	justify-content: space-between;
+	font-size: 24px;
+	font-weight: 500;
 }
 
 .bottomDiv > div {
-  margin: 15px 20px;
+	margin: 15px 20px;
 }
+/* #inside_modal{
+  width: 50%;
+  height:500px;
+  padding: 0px;
+}
+img{
+  padding: 0px;
+} */
+.row {
+	padding: 5%;
+	display: flex;
+	/* justify-content: space-around; */
+	/* flex-flow: row wrap;
+	align-items: stretch; */
+}
+.addFlex {
+	display: flex;
+}
+.cont {
+	display: flex;
+	justify-content: space-between;
+	/* border:1px solid red;  */
+}
+.add {
+	/* border: 1px solid red; */
+	background: #ffe34d;
+	border-radius: 20px;
+}
+.text_cont {
+	margin-top: 10%;
+	margin-left: 30px;
+	font-family: "Roboto", sans-serif;
+	font-size: 24px;
+	font-weight: bolder;
+	padding: 30px;
+	/* border:1px solid black;  */
+	/* font-weight: ; */
+}
+.prices {
+	font-weight: lighter;
+	/* border:1px solid black; */
+}
+.prices > div {
+	margin-bottom: 30px;
+	/* border:1px solid black; */
+	font-size: 16px;
+	font-weight: bolder;
+}
+.radio {
+	display: inline;
+}
+.radio > input {
+	margin-left: 20rem;
+}
+.check {
+	margin: 0 -53px;
+	padding: 1%;
+	font-size: 14px;
+	font-weight: bolder;
+	width: 190px;
+	margin-top: 0px;
+}
+.check2 {
+	padding: 1%;
+	font-size: 14px;
+	font-weight: bolder;
+  width: 190px;
+}
+.image_css {
+	height: 100%;
+	width: 100px;
+	border-radius: 20px;
+}
+/* .font_link {
+	font-family: "Roboto", sans-serif;
+	font-size: 24px;
+} */
