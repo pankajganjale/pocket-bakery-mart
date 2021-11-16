@@ -1,7 +1,7 @@
 import React from "react";
 import "./Carousel.css";
 
-export default function Last({ price, cartItems }) {
+export default function Last({ price, cartItems ,total}) {
 	// console.log('price, cartItems:', price, cartItems)
 
 	return (
@@ -18,7 +18,8 @@ export default function Last({ price, cartItems }) {
 						</div>
 					</div>
 				</div>
-            ))}
+			))}
+			<h3 style={{color:"#263238"}}>Total Bill:{total}</h3>
             <h2 style={{textAlign:"center",color:"green"}}>Thanks for shopping...</h2>
 		</div>
 	);

@@ -2,30 +2,38 @@ import { useState } from "react";
 import "./Carousel.css";
 import { RequestCake } from "../Utils/Request";
 import axios from "axios";
-export const Cart = function Cart({ keep,toggle, onAdd, onRemove }) {
+export const Cart = function Cart({
+	cartItems,
+	keep,
+	toggle,
+	onAdd,
+	onRemove,
+	addPrice,
+}) {
 	const [counter, setCounter] = useState(1);
 	const [state, setState] = useState(true);
 	const [show, setShow] = useState(true);
 
-	const plusCounter = () => {
-		onAdd(keep);
-		setCounter(counter + 1);
-	};
-	const minusCounter = () => {
-		onRemove(keep);
-		return counter <= 1 ? !state : setCounter(counter - 1);
-	};
+	// const plusCounter = () => {
+	// 	onAdd(keep);
+	// 	setCounter(counter + 1);
+	// };
+	// const minusCounter = () => {
+	// 	onRemove(keep);
+	// 	return counter <= 1 ? !state : setCounter(counter - 1);
+	// };
 	const handlClick = () => {
 		onAdd(keep);
 		setState(!state);
+		addPrice(keep);
 	};
-	const handleAdd = async () => {
-		// await axios.post("/cart", {
-		// 	image: val.image,
-		// 	name: val.name,
-		// 	seller: val.seller,
-		// });
-	};
+	// console.log(keep);
+	console.log("keep:", keep);
+
+	// for (let i = 0; i < cartItems.length; i++) {
+	// 	let p = +cartItems[i].sel;
+	// 	total = total + +p;
+	// }
 	return (
 		<div>
 			{state ? (
@@ -36,9 +44,10 @@ export const Cart = function Cart({ keep,toggle, onAdd, onRemove }) {
 						padding: "2%",
 						fontSize: "14px",
 						fontWeight: "bolder",
+						marginBottom: "0px",
 					}}
 				>
-					Add
+					Add to cart
 				</button>
 			) : (
 				<div>
@@ -48,9 +57,40 @@ export const Cart = function Cart({ keep,toggle, onAdd, onRemove }) {
 						<button onClick={plusCounter}>+</button>
 					</div> */}
 					<div style={{ margin: "33% 33%", marginBottom: "0px" }}>
-						<button onClick={minusCounter}>-</button>
-						{counter}
-						<button onClick={plusCounter}>+</button>
+						<div
+							style={{
+								background: "white",
+								height: "5%",
+								margin: "auto auto",
+								width: "50%",
+								borderRadius: "10px",
+								padding: "1%",
+									marginBottom: "1%",
+								border: "1px solid #c7c3c3"
+							}}
+						>
+							<button
+								onClick={() => {
+									onRemove(keep);
+									setCounter(counter - 1);
+								}}
+								className="remove"
+								style={{ background: "white", borderRadius: "10px" }}
+							>
+								-
+							</button>
+							{+counter}
+							<button
+								onClick={() => {
+									onAdd(keep);
+									setCounter(counter + 1);
+								}}
+								className="add"
+								style={{ border: "none", background: "white" }}
+							>
+								+
+							</button>
+						</div>
 						<div>
 							<button className="check" onClick={toggle}>
 								Proceed to Checkout

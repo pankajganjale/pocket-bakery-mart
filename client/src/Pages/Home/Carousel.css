@@ -54,6 +54,7 @@ img{
 }
 .addFlex {
 	display: flex;
+	margin: 10px;
 }
 .cont {
 	display: flex;
@@ -64,6 +65,7 @@ img{
 	/* border: 1px solid red; */
 	background: #ffe34d;
 	border-radius: 20px;
+	
 }
 .text_cont {
 	margin-top: 10%;
@@ -92,7 +94,7 @@ img{
 	margin-left: 20rem;
 }
 .check {
-	margin: 0 -53px;
+	margin: 0 -30px;
 	padding: 1%;
 	font-size: 14px;
 	font-weight: bolder;

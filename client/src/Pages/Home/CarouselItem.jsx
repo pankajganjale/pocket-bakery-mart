@@ -26,13 +26,16 @@ const CarouselItem = ({ data }) => {
 	const [keep, setKeep] = useState("");
 	const [show, setShow] = useState(true);
 	const [cartItems, setCartItems] = useState([]);
-	// const [price, setPrice] = useState(499);
-	const [price, setPrice] = useState(499);
+	const [price, setPrice] = useState(0);
+	// const [counter, setCounter] = useState(0);
 
 	const handlePrice = (e) => {
-		console.log("e.target.value:", e.target.value);
+		// console.log("e.target.value:", e);
 		setPrice(e.target.value);
 	};
+	// const handleCounter = () => {
+	// 	setCounter(counter + 1);
+	// }
 
 	const breakPoints = [
 		{ width: 1, itemsToShow: 1 },
@@ -55,12 +58,13 @@ const CarouselItem = ({ data }) => {
 
 	const toggle = () => {
 		setShow(!show);
+		// setNewprice([...newprice,price]);
+		// setKeep({ ...keep, sel: price });
 	};
 
-
-
 	const onAdd = (prod) => {
-		console.log(prod);
+		// console.log(prod);
+		// setCounter(counter + 1);
 		const exist = cartItems.find((x) => x.id === prod.id);
 		if (exist) {
 			setCartItems(
@@ -72,8 +76,12 @@ const CarouselItem = ({ data }) => {
 			setCartItems([...cartItems, { ...prod, qty: 1 }]);
 		}
 	};
+	const addPrice = (prod) => {
+		setCartItems([...cartItems, { ...prod, sel: price }]);
+	};
 
 	const onRemove = (prod) => {
+		// counter = counter <= 1 ? !state : setCounter(counter - 1);
 		const exist = cartItems.find((x) => x.id === prod.id);
 		if (exist.qty === 1) {
 			setCartItems(cartItems.filter((x) => x.id === prod.id));
@@ -86,6 +94,10 @@ const CarouselItem = ({ data }) => {
 		}
 	};
 
+	const handleKeep = (prod)=>{
+		setKeep(prod);
+		setKeep({ ...prod, qty: 1 });
+	};
 	return (
 		<div className="carousel">
 			<Carousel breakPoints={breakPoints}>
@@ -94,8 +106,9 @@ const CarouselItem = ({ data }) => {
 						<div
 							key={e.id}
 							onClick={() => {
-								setKeep(e);
+								handleKeep(e);
 								setState(true);
+								setPrice(e.small);
 							}}
 							style={{
 								...styles,
@@ -121,157 +134,167 @@ const CarouselItem = ({ data }) => {
 								{e.seller}
 							</div>
 						</div>
+					</>
+				))}
+				{
+					<Modal
+						isOpen={state}
+						onRequestClose={() => setState(false)}
+						style={{
+							overlay: {
+								position: "fixed",
+								top: 0,
+								left: 0,
+								right: 0,
+								bottom: 0,
+								backgroundColor: "rgba(5, 5, 5, 0.75)",
+								width: "100vw",
+								height: "100vh",
 
-						<Modal
-							isOpen={state}
-							onRequestClose={() => setState(false)}
-							style={{
-								overlay: {
-									position: "fixed",
-									top: 0,
-									left: 0,
-									right: 0,
-									bottom: 0,
-									backgroundColor: "rgba(49,49,49,0.4)",
-									width: "100vw",
-									height: "100vh",
+								padding: "0px",
+							},
+							content: {
+								position: "absolute",
+								top: "40%",
+								left: "40%",
+								lineHeight: "1.4",
+								// border: "2px solid black",
+								margin: "5% 10% 0",
+								transform: "translate(-50%, -50%)",
+								background: "#f1f1f1",
+								borderRadius: "10px",
+								width: "50%",
+								height: "70%",
+								border: "none",
+								overflow: "auto",
 
-									padding: "0px",
-								},
-								content: {
-									position: "absolute",
-									top: "40%",
-									left: "40%",
-									lineHeight: "1.4",
-									// border: "2px solid black",
-									margin: "5% 10% 0",
-									transform: "translate(-50%, -50%)",
-									background: "#f1f1f1",
-									borderRadius: "10px",
-									width: "50%",
-									height: "70%",
-									border: "none",
-									overflow: "hidden",
-
-									padding: "0px",
-								},
-							}}
-						>
-							{show ? (
-								<div className="cont">
+								padding: "0px",
+							},
+						}}
+					>
+						{show ? (
+							<div className="cont">
+								<div>
 									<img
 										style={{
 											width: "437px",
-											height: "900px",
-											maxHeight: "100%",
+											height: "100%",
+											// maxHeight: "100%",
 										}}
 										id="inside_modal"
 										src={keep.image}
 										alt=""
 									/>
-									<div className="text_cont">
-										<p style={{ marginBottom: "0px", marginRight: "0px" }}>
-											{keep.seller}
+								</div>
+								<div className="text_cont">
+									<p style={{ marginBottom: "0px", marginRight: "0px" }}>
+										{keep.seller}
+									</p>
+									<div className="cont">
+										<p
+											style={{
+												fontSize: "16px",
+												marginRight: "10rem",
+												marginTop: "0px",
+												fontWeight: "lighter",
+											}}
+										>
+											{keep.name}
 										</p>
-										<div className="cont">
-											<p
-												style={{
-													fontSize: "16px",
-													marginRight: "10rem",
-													marginTop: "0px",
-													fontWeight: "lighter",
-												}}
-											>
-												{keep.name}
-											</p>
-											<>
-												{keep.rating} <span>&#9733;</span>
-											</>
-										</div>
-										{/* --------------------------------------------------------------------------------										 */}
-										<div className="prices">
-											{/* <Newone
+										<>
+											{keep.rating} <span>&#9733;</span>
+										</>
+									</div>
+									{/* --------------------------------------------------------------------------------										 */}
+									<div className="prices">
+										{/* <Newone
 												radio={radio}
 												keep.small={keep.small}
 												mval={keep.medium}
 												lval={keep.large}
 											></Newone> */}
-											<div className="App">
-												<div className="cont">
-													<div style={{ marginTop: "11px" }}>
-														&#8377;
-														<span>{keep.small}</span>
-													</div>
-													<Radio
-														value={keep.small}
-														checked={price == keep.small}
-														color="primary"
-														onChange={handlePrice}
-													/>
+
+										<div className="App">
+											<div className="cont">
+												<div style={{ marginTop: "11px" }}>
+													&#8377;
+													<span>{keep.small}</span>
 												</div>
-												<div className="cont">
-													<div style={{ marginTop: "11px" }}>
-														&#8377;
-														<span>{keep.medium}</span>
-													</div>
-													<Radio
-														value={keep.medium}
-														checked={price == keep.medium}
-														color="primary"
-														onChange={handlePrice}
-													/>
+												<Radio
+													value={keep.small}
+													checked={price == keep.small}
+													color="primary"
+													onChange={handlePrice}
+												/>
+											</div>
+											<div className="cont">
+												<div style={{ marginTop: "11px" }}>
+													&#8377;
+													<span>{keep.medium}</span>
 												</div>
-												<div className="cont">
-													<div style={{ marginTop: "11px" }}>
-														&#8377;
-														<span>{keep.large}</span>
-													</div>
-													<Radio
-														value={keep.large}
-														checked={price == keep.large}
-														color="primary"
-														onChange={handlePrice}
-													/>
+												<Radio
+													value={keep.medium}
+													checked={price == keep.medium}
+													color="primary"
+													onChange={handlePrice}
+												/>
+											</div>
+											<div className="cont">
+												<div style={{ marginTop: "11px" }}>
+													&#8377;
+													<span>{keep.large}</span>
 												</div>
+												<Radio
+													value={keep.large}
+													checked={price == keep.large}
+													color="primary"
+													onChange={handlePrice}
+												/>
 											</div>
 										</div>
-
-										{/* --------------------------------------------------------------------------------										 */}
-
-										<Cart
-											keep={keep}
-											toggle={toggle}
-											onAdd={onAdd}
-											onRemove={onRemove}
-										></Cart>
 									</div>
-								</div>
-							) : (
-								<Cart2
-									price={price}
-									cartItems={cartItems}
-									onRemove={onRemove}
-									onAdd={onAdd}
-								></Cart2>
-							)}
 
-							<div>
-								<button
-									style={{
-										position: "absolute",
-										top: "30px",
-										right: "10px",
-										padding: "5px 7px",
-										border: "none",
-									}}
-									onClick={() => setState(false)}
-								>
-									X
-								</button>
+									{/* --------------------------------------------------------------------------------										 */}
+
+									<Cart
+										keep={keep}
+										cartItems={cartItems}
+										toggle={toggle}
+										onAdd={onAdd}
+										onRemove={onRemove}
+										// handleCounter={handleCounter}
+										// counter={counter}
+										addPrice={addPrice}
+									></Cart>
+								</div>
 							</div>
-						</Modal>
-					</>
-				))}
+						) : (
+							<Cart2
+								price={price}
+								cartItems={cartItems}
+								onRemove={onRemove}
+								onAdd={onAdd}
+								toggle={toggle}
+								// counter={counter}
+							></Cart2>
+						)}
+
+						<div>
+							<button
+								style={{
+									position: "absolute",
+									top: "20px",
+									right: "10px",
+									padding: "5px 7px",
+									border: "none",
+								}}
+								onClick={() => setState(false)}
+							>
+								X
+							</button>
+						</div>
+					</Modal>
+				}
 			</Carousel>
 		</div>
 	);
