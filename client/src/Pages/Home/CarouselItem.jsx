@@ -179,7 +179,7 @@ const CarouselItem = ({ data }) => {
 										style={{
 											width: "437px",
 											height: "100%",
-											// maxHeight: "100%",
+											// maxHeight: "100%"
 										}}
 										id="inside_modal"
 										src={keep.image}
@@ -275,7 +275,7 @@ const CarouselItem = ({ data }) => {
 								onRemove={onRemove}
 								onAdd={onAdd}
 								toggle={toggle}
-								// counter={counter}
+							// counter={counter}
 							></Cart2>
 						)}
 
